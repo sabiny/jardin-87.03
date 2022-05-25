@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 9.25" name="Jardin87">
+  <DataContextMoniker Name="/Jardin87DataContext" />
+  <nestedChildShapes>
+    <classShape Id="88bfeee8-86b8-4a81-abfe-afd771d612a1" absoluteBounds="6.25, 4.125, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/Jardin87DataContext/Administracion" />
+      <nestedChildShapes>
+        <elementListCompartment Id="1c18a35d-48c5-4167-8d5a-66c3998c32f1" absoluteBounds="6.265, 4.585, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="099ef658-6175-4db7-aa22-01b47cb64229" absoluteBounds="0.75, 6.875, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/Jardin87DataContext/Apoderado" />
+      <nestedChildShapes>
+        <elementListCompartment Id="5e1241f2-91e5-4aec-b2dd-f40dac2f1a1c" absoluteBounds="0.765, 7.335, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="7da81ba1-917e-4d1a-92f9-da14aa99ae21" absoluteBounds="0.75, 3.875, 2, 2.155499674479167">
+      <DataClassMoniker Name="/Jardin87DataContext/Docente" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f80b6a9b-5175-4f17-a972-b54950ae9934" absoluteBounds="0.765, 4.335, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="cf5866e4-5b89-4e7b-85eb-8c82d76e019c" absoluteBounds="3.5, 0.75, 2, 2.3478011067708335">
+      <DataClassMoniker Name="/Jardin87DataContext/Estudiantes" />
+      <nestedChildShapes>
+        <elementListCompartment Id="6a0d8375-8971-4319-a6d7-5545f925eb47" absoluteBounds="3.515, 1.21, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="de79f3f6-4965-4431-aa54-13b58d634f98" absoluteBounds="3.5, 4.25, 2, 1.3862939453125005">
+      <DataClassMoniker Name="/Jardin87DataContext/Salon" />
+      <nestedChildShapes>
+        <elementListCompartment Id="645c3128-ba66-483a-bfdf-ccdd03609cf2" absoluteBounds="3.515, 4.71, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.75 : 6.87653746153846); (3.125 : 6.50153746153846); (3.125 : 1.92390055338542); (3.5 : 1.92390055338542)]" fixedFrom="NotFixed" fixedTo="Algorithm">
+      <AssociationMoniker Name="/Jardin87DataContext/Apoderado/Apoderado_Estudiantes" />
+      <nodes>
+        <classShapeMoniker Id="099ef658-6175-4db7-aa22-01b47cb64229" />
+        <classShapeMoniker Id="cf5866e4-5b89-4e7b-85eb-8c82d76e019c" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(1.75 : 3.875); (1.75 : 2.54210333007812); (3.04166666666667 : 2.54210333007812 : JumpStart); (3.20833333333333 : 2.54210333007812 : JumpEnd); (3.5 : 2.54210333007812)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/Jardin87DataContext/Docente/Docente_Estudiantes" />
+      <nodes>
+        <classShapeMoniker Id="7da81ba1-917e-4d1a-92f9-da14aa99ae21" />
+        <classShapeMoniker Id="cf5866e4-5b89-4e7b-85eb-8c82d76e019c" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 4.94314697265625); (6.25 : 4.94314697265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/Jardin87DataContext/Salon/Salon_Administracion" />
+      <nodes>
+        <classShapeMoniker Id="de79f3f6-4965-4431-aa54-13b58d634f98" />
+        <classShapeMoniker Id="88bfeee8-86b8-4a81-abfe-afd771d612a1" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 4.94314697265625); (3.04166666666667 : 4.94314697265625 : JumpStart); (3.20833333333333 : 4.94314697265625 : JumpEnd); (3.5 : 4.94314697265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/Jardin87DataContext/Docente/Docente_Salon" />
+      <nodes>
+        <classShapeMoniker Id="7da81ba1-917e-4d1a-92f9-da14aa99ae21" />
+        <classShapeMoniker Id="de79f3f6-4965-4431-aa54-13b58d634f98" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

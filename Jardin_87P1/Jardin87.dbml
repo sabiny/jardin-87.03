@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Jardin87_beta2" Class="Jardin87DataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=localhost;Initial Catalog=Jardin87_beta2;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="Jardin87_beta2ConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Administracion" Member="Administracion">
+    <Type Name="Administracion">
+      <Column Name="IdAdministrador" Type="System.String" DbType="Char(8) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Usuario" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Contrasenia" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="IdSalon" Type="System.String" DbType="Char(8) NOT NULL" CanBeNull="false" />
+      <Association Name="Salon_Administracion" Member="Salon" ThisKey="IdSalon" OtherKey="IdSalon" Type="Salon" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Apoderado" Member="Apoderado">
+    <Type Name="Apoderado">
+      <Column Name="IdApoderado" Type="System.String" DbType="Char(8) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Apellido" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Direccion" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Telefono" Type="System.String" DbType="VarChar(9)" CanBeNull="true" />
+      <Column Name="DNI" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="CorreoElectronico" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="Apoderado_Estudiantes" Member="Estudiantes" ThisKey="IdApoderado" OtherKey="IdApoderado" Type="Estudiantes" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Docente" Member="Docente">
+    <Type Name="Docente">
+      <Column Name="IdDocente" Type="System.String" DbType="Char(8) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Apellido" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="CorreoElectronico" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Direccion" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Usuario" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Contrasenia" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Association Name="Docente_Estudiantes" Member="Estudiantes" ThisKey="IdDocente" OtherKey="IdDocente" Type="Estudiantes" />
+      <Association Name="Docente_Salon" Member="Salon" ThisKey="IdDocente" OtherKey="IdDocente" Type="Salon" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Estudiantes" Member="Estudiantes">
+    <Type Name="Estudiantes">
+      <Column Name="IdEstudiante" Type="System.String" DbType="Char(8) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Apellido" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="DNI" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="Edad" Type="System.String" DbType="VarChar(3)" CanBeNull="true" />
+      <Column Name="Fecha_nacimiento" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="IdApoderado" Type="System.String" DbType="Char(8) NOT NULL" CanBeNull="false" />
+      <Column Name="IdDocente" Type="System.String" DbType="Char(8) NOT NULL" CanBeNull="false" />
+      <Association Name="Apoderado_Estudiantes" Member="Apoderado" ThisKey="IdApoderado" OtherKey="IdApoderado" Type="Apoderado" IsForeignKey="true" />
+      <Association Name="Docente_Estudiantes" Member="Docente" ThisKey="IdDocente" OtherKey="IdDocente" Type="Docente" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Salon" Member="Salon">
+    <Type Name="Salon">
+      <Column Name="IdSalon" Type="System.String" DbType="Char(8) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="NombreSalon" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="IdDocente" Type="System.String" DbType="Char(8) NOT NULL" CanBeNull="false" />
+      <Association Name="Salon_Administracion" Member="Administracion" ThisKey="IdSalon" OtherKey="IdSalon" Type="Administracion" />
+      <Association Name="Docente_Salon" Member="Docente" ThisKey="IdDocente" OtherKey="IdDocente" Type="Docente" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>
